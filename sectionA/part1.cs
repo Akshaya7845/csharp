@@ -48,6 +48,7 @@ class Program
     }
 }*/
 //#region and #endregion
+using System;
 #region StudentDetails
 class Student
 {
