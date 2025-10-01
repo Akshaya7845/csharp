@@ -13,6 +13,7 @@ class Program
     }
 }*/
 //reference type
+/*
 using System;
 
 class Person
@@ -30,7 +31,28 @@ class Program
         Person p2 = p1;
         p2.Name = "Ravi";
 
-        Console.WriteLine(p1.Name);  // Output: Ravi
+        Console.WriteLine(p1.Name);  
+    }
+}*/
+//enum
+using System;
+enum Days
+{
+    Sunday,     
+    Monday,     
+    Tuesday,    
+    Wednesday  
+}
+
+class Program
+{
+    static void Main()
+    {
+        Days today = Days.Monday;
+
+        Console.WriteLine(today);        
+        Console.WriteLine((int)today);   
     }
 }
+
 
