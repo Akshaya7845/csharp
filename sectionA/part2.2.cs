@@ -1,4 +1,5 @@
 //nullable type
+/*
 using System;
 
 class Program
@@ -16,4 +17,19 @@ class Program
             Console.WriteLine("Age is not provided.");  // Output in this case
         }
     }
+}*/
+//non nullable type
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int? x = null;  
+        int y = 10;     
+
+        Console.WriteLine("Value of y: " + y);
+    }
 }
+
+
