@@ -49,7 +49,7 @@ namespace StudentApp
 }
 */
 //constructor chaining:
-using System;
+/*using System;
 
 namespace StudentApp
 {
@@ -104,6 +104,34 @@ namespace StudentApp
             //  student with name and age
             Student s3 = new Student("Aishwarya", 24);
             s3.Display(); 
+        }
+    }
+}
+*/
+//method overloading
+using System;
+
+namespace CalculatorApp
+{
+    class Calculator
+    {
+        public void Add(int a, int b)
+        {
+            Console.WriteLine($"Adding integers: {a} + {b} = {a + b}");
+        }
+        public void Add(double a, double b)
+        {
+            Console.WriteLine($"Adding doubles: {a} + {b} = {a + b}");
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Calculator c = new Calculator();
+            c.Add(5, 10); 
+            c.Add(2.5, 3.5);  
         }
     }
 }
