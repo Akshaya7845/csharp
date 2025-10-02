@@ -1,5 +1,5 @@
 //virtual example:
-using System;
+/*using System;
 
 class Animal
 {
@@ -38,6 +38,33 @@ class Program
         Animal a3 = new Cat();
         a3.Speak();
 
+        Dog d = new Dog();
+        d.Speak();
+    }
+}*/
+//override example:
+using System;
+
+class Animal
+{
+    public virtual void Speak()
+    {
+        Console.WriteLine("Animal speaks...");
+    }
+}
+
+class Dog : Animal
+{
+    public override void Speak()
+    {
+        Console.WriteLine("Dog barks!");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
         Dog d = new Dog();
         d.Speak();
     }
