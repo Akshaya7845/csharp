@@ -40,7 +40,7 @@ class Program
 }
 */
 //protected
-using System;
+/*using System;
 
 class Person
 {
@@ -60,5 +60,21 @@ class Program
         Student s = new Student();
         s.Show();  
 
+    }
+}*/
+//internal
+using System;
+
+class Demo
+{
+    internal string city = "Chennai";
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Demo d = new Demo();
+        Console.WriteLine(d.city);
     }
 }
