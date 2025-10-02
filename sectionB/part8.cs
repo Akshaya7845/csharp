@@ -17,7 +17,7 @@ class Program
 }
 */
 //private
-using System;
+/*using System;
 
 class Demo
 {
@@ -36,5 +36,29 @@ class Program
 
         // access private field using a public method
         d.Show();  
+    }
+}
+*/
+//protected
+using System;
+
+class Person
+{
+    protected string data = "Protected Info";
+}
+class Student : Person
+{
+    public void Show()
+    {
+        Console.WriteLine(data);
+    }
+}
+class Program
+{
+    static void Main(string[] args)
+    {
+        Student s = new Student();
+        s.Show();  
+
     }
 }
