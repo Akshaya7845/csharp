@@ -1,5 +1,5 @@
 //method overloading
-using System;
+/*using System;
 
 class Calculator
 {
@@ -30,3 +30,45 @@ class Program
         Console.WriteLine(calc.Add(5.5, 10.5));
     }
 }
+*/
+//method overriding
+using System;
+
+class Animal
+{
+    public virtual void Speak()
+    {
+        Console.WriteLine("Animal speaks");
+    }
+}
+
+class Dog : Animal
+{
+    public override void Speak()
+    {
+        Console.WriteLine("Dog barks");
+    }
+}
+
+class Cat : Animal
+{
+    public override void Speak()
+    {
+        Console.WriteLine("Cat meows");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Animal myAnimal;
+
+        myAnimal = new Dog();
+        myAnimal.Speak();
+
+        myAnimal = new Cat();
+        myAnimal.Speak();
+    }
+}
+
