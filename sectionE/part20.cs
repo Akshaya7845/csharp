@@ -1,5 +1,5 @@
 //ienumerator without yield return:
-using System;
+/*using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -56,6 +56,36 @@ class Program
         Console.WriteLine("using manual IEnumerator implementation:");
         var manualCollection = new StudentCollection();
         foreach (var student in manualCollection)
+        {
+            Console.WriteLine(student);
+        }
+    }
+}
+*/
+//ienumerator using yield return example
+using System;
+using System.Collections.Generic;
+
+class YieldStudentCollection
+{
+    private string[] students = { "Anbu", "Divya", "Karthik", "Meena" };
+
+    public IEnumerable<string> GetStudents()
+    {
+        foreach (var student in students)
+        {
+            yield return student;
+        }
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Using yield return Implementation:");
+        var yieldCollection = new YieldStudentCollection();
+        foreach (var student in yieldCollection.GetStudents())
         {
             Console.WriteLine(student);
         }
