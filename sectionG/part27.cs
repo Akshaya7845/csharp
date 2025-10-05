@@ -52,7 +52,7 @@ class Program
 }
 */
 //singleton with threads:
-using System;
+/*using System;
 using System.Threading;
 public class ATMSystem
 {
@@ -106,4 +106,55 @@ class Program
         Console.WriteLine("\n transactions completed.");
     }
 }
+*/
+//singleton using tasks:
+using System;
+using System.Threading.Tasks;
+public class ATMSystem
+{
+    private static ATMSystem _instance;
+    private static readonly object _lock = new object();
 
+    private ATMSystem()
+    {
+        Console.WriteLine("atm system started");
+    }
+    public static ATMSystem Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                lock (_lock)
+                {
+                    if (_instance == null)
+                        _instance = new ATMSystem();
+                }
+            }
+            return _instance;
+        }
+    }
+    public void ProcessTransaction(string user)
+    {
+        Console.WriteLine($"Transaction processed for {user} | ATM Instance: {this.GetHashCode()}");
+    }
+}
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("ATM Transactions using Tasks\n");
+
+        Task[] tasks = new Task[5];
+        for (int i = 1; i <= 5; i++)
+        {
+            int userId = i;
+            tasks[i - 1] = Task.Run(() =>
+            {
+                ATMSystem.Instance.ProcessTransaction($"User {userId}");
+            });
+        }
+        Task.WaitAll(tasks);
+        Console.WriteLine("\nall task-based atm transactions completed.");
+    }
+}
